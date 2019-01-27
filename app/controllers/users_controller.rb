@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 		first_names = []
 		users.each do |user| #iterate through it
 			first_names << user['first_name']
+			user = User.new(:first_name => user['first_name'], :last_name => user['last_name']) #save each incomnig user
+			user.save 
 		end
 
 		users = User.where(first_name: first_names)
