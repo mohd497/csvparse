@@ -1,2 +1,19 @@
 class UsersController < ApplicationController
+
+	def user_count
+		#read users json object gave as post
+		users = params[:users]
+		first_names = []
+		user.each do |user| #iterate through it
+			first_names << user['first_name']
+		end
+
+		users = User.where(first_names)
+		users = users.map {|user| user.first_name} #process in db
+		result = users.each_with_object(Hash.new(0)) { |users,counts| counts[a] += 1 } #take out hash and users
+
+		render json: result	
+
+	end		
+
 end
