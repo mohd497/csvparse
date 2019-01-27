@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
 		users = User.where(first_name: first_names)
 		users = users.map {|user| user.first_name} #process in db
-		result = users.each_with_object(Hash.new(0)) { |users,counts| counts[a] += 1 }.map{|k,v| k if v >= 2}.compact 
+		result = users.each_with_object(Hash.new(0)) { |users,counts| counts[users] += 1 }.map{|k,v| k if v >= 2} 
 		#take out users count per first name if count 2 or above
 
 		render json: result	
