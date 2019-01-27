@@ -7,18 +7,21 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+2.5.3
+Rails 5.2.2
 
 * Configuration
 
-* Database creation
-
-* Database initialization
+install rails 
+bundle install
+rails s
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+bundle exec rspec spec/
 
-* Deployment instructions
+* What is remaining?
 
-* ...
+- input CSV (right now reading only params POST)
+- Output also count right now only the firstname is showing whos count is greater then or equal to 2
+
